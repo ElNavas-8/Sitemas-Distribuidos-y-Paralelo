@@ -10,29 +10,25 @@ namespace Proyecto2
     {
         // Atributo
         private static int cantidadVehiculos = 0;
-        public string marca;
+        private string marca;
         private int velocidad;
 
         // Propiedad
-        public string Marca
-        {
+        public string Marca{
             get { return this.marca; }
             internal set { this.marca = value; }
         }
 
-        public int Velocidad
-        {
+        public int Velocidad{
             get => velocidad;
         }
         public static int CantidadVehiculos { get => cantidadVehiculos;}
 
-        public void Acelerar(int incremento)
-        {
+        public void Acelerar(int incremento){
             this.Acelerar(incremento, false);
         }
 
-        public void Acelerar(int incremento, bool turbo)
-        {
+        public void Acelerar(int incremento, bool turbo){
             this.velocidad += incremento;
             if (turbo)
             {
@@ -45,14 +41,12 @@ namespace Proyecto2
         }
 
         // Setter
-        /* public void ModificarMarca(Vehiculo vehiculo, string nuevaMarca)
-        {
+        /* public void ModificarMarca(Vehiculo vehiculo, string nuevaMarca){
             vehiculo.marca = nuevaMarca;
         }
 
         //Getter
-        public string GetMarca()
-        {
+        public string GetMarca(){
             return marca;
         } */
 
