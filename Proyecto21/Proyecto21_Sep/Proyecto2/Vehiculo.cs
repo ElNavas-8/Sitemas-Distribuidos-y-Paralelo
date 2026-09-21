@@ -8,24 +8,61 @@ namespace Proyecto2
 {
     public class Vehiculo
     {
-        // Atributo o Variable de instancia
-        public string Marca = "Seat";
+        // Atributo
+        private static int cantidadVehiculos = 0;
+        public string marca;
+        private int velocidad;
+
+        // Propiedad
+        public string Marca
+        {
+            get { return this.marca; }
+            internal set { this.marca = value; }
+        }
+
+        public int Velocidad
+        {
+            get => velocidad;
+        }
+        public static int CantidadVehiculos { get => cantidadVehiculos;}
+
+        public void Acelerar(int incremento)
+        {
+            this.Acelerar(incremento, false);
+        }
+
+        public void Acelerar(int incremento, bool turbo)
+        {
+            this.velocidad += incremento;
+            if (turbo)
+            {
+                Console.WriteLine("Velocidad actual del vehiculo con turbo {0} a {1}km/h", this.marca, this.velocidad);
+            }
+            else
+            {
+                Console.WriteLine("Velocidad actual del vehiculo {0} a {1}km/h", this.marca, this.velocidad);
+            }
+        }
 
         // Setter
-        public void ModificarMarca(Vehiculo vehiculo, string nuevaMarca)
+        /* public void ModificarMarca(Vehiculo vehiculo, string nuevaMarca)
         {
-            vehiculo.Marca = nuevaMarca;
+            vehiculo.marca = nuevaMarca;
         }
 
         //Getter
         public string GetMarca()
         {
-            return Marca;
-        }
+            return marca;
+        } */
 
         // Constructor
-        public Vehiculo() {
-            this.Marca = "Seat";
+        public Vehiculo():this("Sin marca"){
+        }
+
+        public Vehiculo(string marca){
+            this.marca = marca;
+            Vehiculo.cantidadVehiculos++;
         }
     }
 }
