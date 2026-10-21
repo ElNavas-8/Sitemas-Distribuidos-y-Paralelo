@@ -49,7 +49,7 @@ public class ClientProgram
                     Console.WriteLine("[CLIENTE] Petición enviada al servidor...");
 
                     // Recepción de la respuesta
-                    byte[] responseBuffer = new byte;
+                    byte[] responseBuffer = new byte[1024];
                     int bytesRead = stream.Read(responseBuffer, 0, responseBuffer.Length);
                     string responseData = Encoding.ASCII.GetString(responseBuffer, 0, bytesRead);
 
