@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting;
@@ -23,7 +23,7 @@ namespace Cliente
                 TipoRemoto,
                 "tcp://localhost:9998/MovieTicket");
 
-            string resultado = objetoRemoto.GetTicketStatus("Ticket Nº: 6363");
+            string resultado = objetoRemoto.GetTicketStatus("Ticket N�: 6363");
             Console.WriteLine(resultado);
             Console.ReadLine();
         }
