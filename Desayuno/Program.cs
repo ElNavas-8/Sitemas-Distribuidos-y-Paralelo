@@ -72,11 +72,11 @@ namespace Desayuno
         {
             Stopwatch conometro = Stopwatch.StartNew();
 
-            Task<TazaCafe> cafeTask = PrepararCafeAsync();
-            Task<ZumoNaranja> zumoTask = PrepararZumoAsync();
-            Task<Huevos> huevosTask = PrepararHuevosAsync();
             Task<Tostadas> tostadasTask = PrepararTostadasAsync();
+            Task<TazaCafe> cafeTask = PrepararCafeAsync();
+            Task<Huevos> huevosTask = PrepararHuevosAsync();
             Task<Bacon> baconTask = PrepararBaconAsync();
+            Task<ZumoNaranja> zumoTask = PrepararZumoAsync();
 
             await Task.WhenAll(
                 cafeTask,
