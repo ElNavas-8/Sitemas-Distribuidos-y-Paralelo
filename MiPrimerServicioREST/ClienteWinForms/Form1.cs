@@ -37,5 +37,24 @@ namespace ClienteWinForms // Asegúrate de que coincida con el namespace de tu pr
         {
 
         }
+
+        private async void btnConvertir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string monedaOrigen = cmbDe.Text;   // Ej: "USD"
+                string monedaDestino = cmbA.Text;   // Ej: "EUR"
+                double cantidad = double.Parse(txtCantidad.Text);
+
+                // Escribe "clienteRest." y usa IntelliSense para confirmar si se generó como MonedasAsync o GetMonedasAsync
+                double resultado = await clienteRest.MonedasAsync(monedaOrigen, monedaDestino, cantidad);
+
+                MessageBox.Show($"Resultado: {resultado} {monedaDestino}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la conversión: " + ex.Message);
+            }
+        }
     }
 }
